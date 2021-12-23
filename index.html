@@ -276,9 +276,10 @@
 </head>
 
 <body>
-  <audio controls loop autoplay="autoplay" id="music" style="visibility: hidden;">
+  <audio controls loop autoplay="autoplay" id="music" style="opacity: 0.5;">
     <source src="we.wish.you.2.mp3" type="audio/mpeg">
   </audio>
+
 
   <div id="tree">
     <div class="star"></div>
@@ -409,16 +410,10 @@
       rz + 'deg)');
     tree.appendChild(div);
   }
+  var music = document.querySelector("#music");
+  document.addEventListener("WeixinJSBridgeReady", function () {
+    music.play(); //音乐播放
 
-  function play() {
-    // debugger
-    var music = document.getElementById("music");
-    //判断如果音乐停止播放中，就让他播放。。。
-    if (music.paused) {
-      music.paused = false;
-      music.play();
-    }
-  }
+  }, false);
   //调用函数
-  setInterval(play(), 1);
 </script>
