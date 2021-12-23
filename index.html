@@ -276,7 +276,7 @@
 </head>
 
 <body>
-  <audio controls loop autoplay="autoplay">
+  <audio controls loop autoplay="autoplay" id="music">
     <source src="we.wish.you.2.mp3" type="audio/mpeg">
   </audio>
 
@@ -409,4 +409,16 @@
       rz + 'deg)');
     tree.appendChild(div);
   }
+
+  function play() {
+    // debugger
+    var music = document.getElementById("music");
+    //判断如果音乐停止播放中，就让他播放。。。
+    if (music.paused) {
+      music.paused = false;
+      music.play();
+    }
+  }
+  //调用函数
+  setInterval(play(), 1);
 </script>
